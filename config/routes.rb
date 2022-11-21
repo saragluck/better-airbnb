@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get "sessions/create"
+  get "sessions/new"
+  get "sessions/edit"
+  get "sessions/update"
+  get "sessions/destroy"
+
   resources :users
   resources :sessions
   resources :rooms

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "sessions/edit"
   get "sessions/update"
   get "sessions/destroy"
+
   resources :users
   resources :sessions
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

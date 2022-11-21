@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "sessions/edit"
   get "sessions/update"
   get "sessions/destroy"
+  get "/login" => "sessions#new"
+  get "/logout" => "sessions#destroy"
 
   resources :users
   resources :sessions

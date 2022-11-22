@@ -22,7 +22,7 @@ class RoomsController < ApplicationController
   end
 
   def new
-    @user = User.new
+    @room = Room.new
     render template: "rooms/new"
   end
 

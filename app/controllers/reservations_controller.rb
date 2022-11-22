@@ -15,6 +15,7 @@ class ReservationsController < ApplicationController
     @reservation.room_id = params[:reservation][:room_id]
     @reservation.start_date = params[:reservation][:start_date]
     @reservation.end_date = params[:reservation][:end_date]
+    @reservation.stay_length = params [:reservation][:stay_length]
     #@reservation.price = params[:reservation][:price]
     #@reservation.total = params [:reservation][:total]
     @reservation.save

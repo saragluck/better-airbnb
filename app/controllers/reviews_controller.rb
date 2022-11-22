@@ -9,6 +9,9 @@ class ReviewsController < ApplicationController
   end
 
   def new
+
+    @review = Review.new
+
     render template: "reviews/new"
   end
 

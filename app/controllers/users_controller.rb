@@ -12,7 +12,12 @@ class UsersController < ApplicationController
     @user.password_confirmation = params[:user][:password_confirmation]
     @user.image = params[:user][:image]
     @user.save
-    redirect_to "/users"
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to "/rooms"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def new

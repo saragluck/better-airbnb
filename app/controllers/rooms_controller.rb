@@ -1,4 +1,6 @@
 class RoomsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     @rooms = Room.all
     render template: "rooms/index"
@@ -11,7 +13,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new
-    @room.user_id = params[:room][:user_id]
+    @room.user_id = current_user.id
     @room.address = params[:room][:address]
     @room.city = params[:room][:city]
     @room.state = params[:room][:state]

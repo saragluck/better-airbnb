@@ -8,10 +8,18 @@ class ReviewsController < ApplicationController
     redirect_to "/reviews"
   end
 
+  def destroy
+  end
+
+  def edit
+  end
+
+  def index
+  end
+
+ 
   def new
-
     @review = Review.new
-
     render template: "reviews/new"
   end
 
@@ -20,4 +28,5 @@ class ReviewsController < ApplicationController
 
   def delete
   end
+
 end

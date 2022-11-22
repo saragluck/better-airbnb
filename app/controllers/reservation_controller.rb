@@ -6,6 +6,8 @@ class ReservationController < ApplicationController
   end
 
   def new
+    @reservation = Reservation.new
+    render template "reservation/new"
   end
 
   def edit

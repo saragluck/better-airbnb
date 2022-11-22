@@ -1,10 +1,15 @@
 class ReservationsController < ApplicationController
+  require "date"
+
   def index
     @reservations = Reservation.all
     render template: "reservations/index"
   end
 
   def create
+    # room = Room.find_by(id: params[:room_id])
+    # price = room.price
+    # total = price *
     @reservation = Reservation.new
     @reservation.user_id = params[:reservation][:user_id]
     @reservation.room_id = params[:reservation][:room_id]

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   get "/login" => "sessions#new"
   get "/logout" => "sessions#destroy"
 
@@ -14,15 +15,14 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   #hello world
+=======
+  resources :users
+  resources :sessions
+  resources :rooms
+  resources :reservations
+  resources :reviews
+  resources :sessions
+>>>>>>> 24d05a45b64b646cc7793372ce3b99e42a7562b7
 end
 
-# get 'rooms/create'
-# get 'rooms/new'
-# get 'rooms/edit'
-# get 'rooms/update'
-# get 'rooms/destroy'
-# get "sessions/create"
-# get "sessions/new"
-# get "sessions/edit"
-# get "sessions/update"
-# get "sessions/destroy"
+

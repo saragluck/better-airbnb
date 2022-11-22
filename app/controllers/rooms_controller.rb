@@ -1,7 +1,12 @@
 class RoomsController < ApplicationController
   def index
     @rooms = Room.all
-    render template: "/rooms"
+    render template: "rooms/index"
+  end
+
+  def show
+    @room = Room.find_by(id: params[:id])
+    render template: "rooms/show"
   end
 
   def create
@@ -27,11 +32,22 @@ class RoomsController < ApplicationController
   end
 
   def edit
+    @room = Room.find_by(id: params[:id])
+    render template: "rooms/edit"
+    @room.save
   end
 
   def update
+    @room = Room.find_by(id: params[:id])
+    @room.price = params[:room][:price]
+    @room.description = params[:room][:description]
+    @room.save
+    redirect_to "/rooms"
   end
 
   def destroy
+    @room = Room.find_by(id: params[:id])
+    @room.destroy
+    redirect_to "/rooms", status: :see_other
   end
 end

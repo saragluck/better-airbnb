@@ -1,2 +1,16 @@
-<h1>Rooms#edit</h1>
-<p>Find me in app/views/rooms/edit.html.erb</p>
+
+<h1>Edit Room</h1>
+<%= form_with model: @room do |form| %>
+    <div>
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+  </div>
+    <div>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

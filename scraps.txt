@@ -1,0 +1,4 @@
+### Frontend format for linking  <%= link_to "More Info", pet %>
+
+
+

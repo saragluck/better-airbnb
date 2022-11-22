@@ -17,6 +17,7 @@ class ReviewsController < ApplicationController
   def index
   end
 
+ 
   def new
     @review = Review.new
     render template: "reviews/new"
@@ -24,4 +25,8 @@ class ReviewsController < ApplicationController
 
   def update
   end
+
+  def delete
+  end
+
 end

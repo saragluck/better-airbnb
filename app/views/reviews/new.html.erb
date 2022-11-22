@@ -1,14 +1,15 @@
+
 <h1>Write A Review!</h1>
 <%= form_with model: @review do |form| %>
   <div>
-    <%= form.label :reservation_id %>
-    <%= form.text_field :reservation_id %>
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
   </div>
-    <div>
+  <div>
     <%= form.label :rating %>
     <%= form.text_field :rating %>
   </div>
-    <div>
+  <div>
     <%= form.label :comment %>
     <%= form.text_field :comment %>
   </div>
@@ -16,3 +17,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+

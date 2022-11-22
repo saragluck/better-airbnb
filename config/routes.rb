@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :rooms
   resources :reservations
   resources :reviews
+  resources :sessions
 end

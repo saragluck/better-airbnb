@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :authenticate_admin, except: [:index, :show]
+  before_action :authenticate_user, except: [:index]
 
   def index
     @rooms = Room.all
@@ -7,8 +7,12 @@ class RoomsController < ApplicationController
   end
 
   def show
-    @room = Room.find_by(id: params[:id])
-    render template: "rooms/show"
+    if current_user.id != nil
+      @room = Room.find_by(id: params[:id])
+      render template: "rooms/show"
+    else
+      redirect_to "/login"
+    end
   end
 
   def create
@@ -34,9 +38,13 @@ class RoomsController < ApplicationController
   end
 
   def edit
-    @room = Room.find_by(id: params[:id])
-    render template: "rooms/edit"
-    @room.save
+    if current_user.id != nil
+      @room = Room.find_by(id: params[:id])
+      render template: "rooms/edit"
+      @room.save
+    else
+      redirect_to "/login"
+    end
   end
 
   def update

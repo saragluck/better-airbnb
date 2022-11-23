@@ -6,11 +6,12 @@ class ReservationsController < ApplicationController
     render template: "reservations/index"
   end
 
-  def create
-    @room = Room.find_by(id: params[:room_id])
-    @res_price = @room.price * @reservation.stay_length.to_i
-    @reservation.price = @res_price
+  def show
+    @reservation = Reservation.find_by(id: current_user.id)
+    render template: "reservations/show"
+  end
 
+  def create
     @reservation = Reservation.new
     @reservation.user_id = params[:reservation][:user_id]
     @reservation.room_id = params[:reservation][:room_id]

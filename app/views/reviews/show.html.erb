@@ -1,8 +1,8 @@
-<h1>All Reviews</h1>
+<h1>Review</h1>
 <% @reviews.each do |review| %>
 
   <p>Reviewer: <%= review.user_id %></p>
-  <p>Reservation: <%= review.reservation_id %></p>
+  <p>Room: <%= review.room_id %></p>
   <p>Rating: <%= review.rating %></p>
   <p>Comment: <%= review.comment %></p>
 <% end %>

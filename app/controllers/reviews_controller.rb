@@ -1,4 +1,8 @@
 class ReviewsController < ApplicationController
+
+  def room_id
+
+  end
   def index
     @reviews = Review.all
     render template: "reviews/index"
@@ -21,7 +25,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @review = Review.find_by(id: params[:id])
+    @reviews = Review.find_by(id: params[:review][:room_id])
     render template: "reviews/show"
   end
 

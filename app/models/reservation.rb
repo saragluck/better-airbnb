@@ -6,7 +6,9 @@ class Reservation < ApplicationRecord
   has_many :addresses, through: :room
   has_many :prices, through: :room
 
-  def total
-    price * stay_length
-  end
+  # def total
+  #   room = Room.find_by(id: Reservation.room_id)
+  #   price = room.price
+  #   price * days
+  # end
 end

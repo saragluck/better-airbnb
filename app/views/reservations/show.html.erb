@@ -1,0 +1,10 @@
+<h1>Your Reservations</h1>
+<% @reservations.each do |reservation| %>
+  <p><%= reservation.room_id %></p>
+  <p>City: <%= reservation.city %></p>
+  <p>State: <%= reservation.state %></p>
+  <p>Price Per Night: <%= reservation.price %></p>
+  <p>Start Date: <%= reservation.start_date %></p>
+  <p>End Date: <%= reservation.end_date %></p>
+  <p>Total: <%= reservation.total %></p>
+<% end %>

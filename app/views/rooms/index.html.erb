@@ -1,4 +1,7 @@
 <h1>All Rooms</h1>
+<%= link_to "Make a Reservation", new_reservation_path %>
+<%= link_to "Logout", logout_path %>
+
 <% @rooms.each do |room| %>
   <h2><%= room.address %></h2>
   <p>City: <%= room.city %></p>
@@ -10,4 +13,5 @@
   <p>Total Occupancy: <%= room.total_occupancy%></p>
   <p>Total Bedrooms: <%= room.total_bedrooms %></p>
   <p>Total Bathrooms: <%= room.total_bathrooms%></p>
+  <%= link_to "View This Room", room %>
 <% end %>

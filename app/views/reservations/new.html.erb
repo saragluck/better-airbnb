@@ -9,12 +9,16 @@
     <%= form.text_field :room_id %>
   </div>
   <div>
-    <%= form.label :start_date %>
-    <%= form.text_field :start_date %>
+    <%= form.label :start_date_MM_DD_YYYY %>
+    <%= form.text_field :start_date_ %>
   </div>
   <div>
-    <%= form.label :end_date%>
+    <%= form.label :end_date_MM_DD_YYYY %>
     <%= form.text_field :end_date%>
+  </div>
+  <div>
+    <%= form.label :stay_length %>
+    <%= form.text_field :stay_length %>
   </div>
   <div>
     <%= form.submit %>
